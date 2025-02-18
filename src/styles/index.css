@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@config "../../tailwind.config.js";
+
+.bg-deepNavy {
+  background-color: #1a1a2e;
+}
+
+.bg-darkBlue {
+  background-color: #264653;
+}
