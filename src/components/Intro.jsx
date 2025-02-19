@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 export const Intro = () => {
   return (
-    <section id="about-me" className="mx-auto max-w-5xl px-6 py-48 text-white">
+    <section id="about-me" className="mx-auto max-w-5xl px-6 py-6 text-white">
       <motion.h1
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

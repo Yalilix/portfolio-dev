@@ -1,6 +1,5 @@
 import { CenterImage } from '../components/CenterImage';
 import { Nav } from '../components/Nav';
-import '../styles/home.css';
 import ReactLenis from 'lenis/react';
 import { Intro } from '../components/Intro';
 import { Projects } from '../components/Projects';
