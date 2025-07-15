@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   motion,
   useMotionTemplate,
@@ -8,6 +9,8 @@ import { useRef } from 'react';
 import GamesHub from '../Images/GamesHub.png';
 import PrestoPresentation from '../Images/Presto.png';
 import InventoryManagementSystem from '../Images/IMS.png';
+import Spotz from '../Images/spotz.png';
+import SussyUni from '../Images/sussyuni.png';
 
 export const Projects = () => {
   const ref = useRef(null);
@@ -56,20 +59,31 @@ export const Projects = () => {
         link="https://www.youtube.com/watch?v=N4vfZhB0j28"
         position={'right'}
       />
+      <ParallaxImg
+        src={Spotz}
+        alt="Spotz project screenshot"
+        start={150}
+        end={-300}
+        className="ml-12 w-8/12"
+        text={'Spotz'}
+        link="https://spotz.netlify.app"
+        position={'left'}
+      />
+      <ParallaxImg
+        src={SussyUni}
+        alt="SussyUni project screenshot"
+        start={150}
+        end={-300}
+        className="ml-auto w-8/12"
+        text={'SussyUni'}
+        link="https://www.sussyuni.com"
+        position={'right'}
+      />
     </div>
   );
 };
 
-const ParallaxImg = ({
-  className,
-  alt,
-  src,
-  start,
-  end,
-  text,
-  link,
-  position,
-}) => {
+const ParallaxImg = ({ className, alt, src, start, end, text, link }) => {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -84,23 +98,27 @@ const ParallaxImg = ({
   const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
 
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      <motion.div
-        className={className + ' group flex'}
-        ref={ref}
-        style={{ transform, opacity }}
+    <motion.div
+      className={className + ' group flex'}
+      ref={ref}
+      style={{ transform, opacity }}
+    >
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="z-1 block"
       >
-        <div className="z-1">
-          <img
-            src={src}
-            alt={alt}
-            className="cursor-pointer duration-700 rounded-lg object-contain shadow-sm shadow-white h-56"
-          />
-          <span className="flex w-full text-white sm:text-2xl text-sm justify-center pt-1">
-            {text}
-          </span>
-        </div>
-        {/* <div
+        <img
+          src={src}
+          alt={alt}
+          className="cursor-pointer duration-700 rounded-lg object-contain shadow-sm shadow-white h-56"
+        />
+        <span className="flex w-full text-white sm:text-2xl text-sm justify-center pt-1">
+          {text}
+        </span>
+      </a>
+      {/* <div
           className={`bg-deepNavy w-fit-content sm:min-w-48 min-w-22 sm:max-h-40 max-h-24 my-3 py-1.5 rounded-tr-2xl
                     rounded-br-2xl text-white group-hover:opacity-100 opacity-100 duration-700
                     text-sm sm:text-base font-semibold text-center ${
@@ -109,7 +127,6 @@ const ParallaxImg = ({
         >
           hi
         </div> */}
-      </motion.div>
-    </a>
+    </motion.div>
   );
 };

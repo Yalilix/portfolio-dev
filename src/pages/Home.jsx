@@ -5,29 +5,32 @@ import { Intro } from '../components/Intro';
 import { Projects } from '../components/Projects';
 import { TechStacks } from '../components/TechStacks';
 import { backendIcons, frontendIcons, otherIcons } from '../TechIcons';
+import SplashCursor from '../components/SplashCursor';
 
 const Home = () => {
   return (
-    <div className="bg-zinc-950">
-      <ReactLenis
-        root
-        options={{
-          lerp: 0.1,
-          // infinite: true,
-          // syncTouch: true,
-        }}
-      >
-        <Nav />
-        <StartContent />
-        <Projects />
-
-        <TechStacks
-          techSections={['Frontend', 'Backend', 'Others']}
-          icons={[frontendIcons, backendIcons, otherIcons]}
-        />
-        <Intro />
-        <Footer />
-      </ReactLenis>
+    <div className="min-h-screen relative bg-gradient-to-br from-zinc-950 via-blue-950 to-zinc-900">
+      <SplashCursor />
+      <div className="relative z-10">
+        <ReactLenis
+          root
+          options={{
+            lerp: 0.1,
+            // infinite: true,
+            // syncTouch: true,
+          }}
+        >
+          <Nav />
+          <StartContent />
+          <Projects />
+          <TechStacks
+            techSections={['Frontend', 'Backend', 'Others']}
+            icons={[frontendIcons, backendIcons, otherIcons]}
+          />
+          <Intro />
+          <Footer />
+        </ReactLenis>
+      </div>
     </div>
   );
 };

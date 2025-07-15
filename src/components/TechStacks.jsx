@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-key */
 import { motion } from 'framer-motion';
 
 export const TechStacks = ({ techSections, icons }) => {
@@ -27,7 +29,7 @@ export const TechStacks = ({ techSections, icons }) => {
           </motion.h1>
           <div className="flex flex-wrap justify-center">
             {icons[index].map(({ name, src }, index) => (
-              <TechstackItem title={name}>
+              <TechstackItem title={name} key={index}>
                 <img
                   src={src}
                   alt={`${name} symbol`}

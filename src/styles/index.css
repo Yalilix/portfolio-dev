@@ -8,3 +8,33 @@
 .bg-darkBlue {
   background-color: #264653;
 }
+
+@keyframes gradient-move-ltr {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-move-rtl {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move-ltr 2.5s linear 0s 2,
+    gradient-move-rtl 2.5s linear 5s infinite;
+}
