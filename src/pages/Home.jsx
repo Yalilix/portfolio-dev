@@ -10,7 +10,7 @@ import SplashCursor from "../components/SplashCursor";
 const Home = () => {
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-zinc-950 via-blue-950 to-zinc-900">
-      {/* <SplashCursor /> */}
+      <SplashCursor />
       <div className="relative z-10">
         <ReactLenis
           root
