@@ -1,16 +1,16 @@
-import { CenterImage } from '../components/CenterImage';
-import { Nav } from '../components/Nav';
-import ReactLenis from 'lenis/react';
-import { Intro } from '../components/Intro';
-import { Projects } from '../components/Projects';
-import { TechStacks } from '../components/TechStacks';
-import { backendIcons, frontendIcons, otherIcons } from '../TechIcons';
-import SplashCursor from '../components/SplashCursor';
+import { CenterImage } from "../components/CenterImage";
+import { Nav } from "../components/Nav";
+import ReactLenis from "lenis/react";
+import { Intro } from "../components/Intro";
+import { Projects } from "../components/Projects";
+import { TechStacks } from "../components/TechStacks";
+import { backendIcons, frontendIcons, otherIcons } from "../TechIcons";
+import SplashCursor from "../components/SplashCursor";
 
 const Home = () => {
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-zinc-950 via-blue-950 to-zinc-900">
-      <SplashCursor />
+      {/* <SplashCursor /> */}
       <div className="relative z-10">
         <ReactLenis
           root
@@ -24,7 +24,7 @@ const Home = () => {
           <StartContent />
           <Projects />
           <TechStacks
-            techSections={['Frontend', 'Backend', 'Others']}
+            techSections={["Frontend", "Backend", "Others"]}
             icons={[frontendIcons, backendIcons, otherIcons]}
           />
           <Intro />
